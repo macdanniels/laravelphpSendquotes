@@ -44,12 +44,12 @@ class SendquoteController extends Controller
 
                                      
 
-        // if(model::where($data)){
+        if(DB::table('sendquotes')->where('message', $message)){
 
-           //   return back()->with('errors', 'Request already exists');
-           // }
+              return back()->with('errors', 'Request already exists');
+            }
              
-             //  else{  
+               else{  
 
         
         $data= array('fname'=>$fname,
